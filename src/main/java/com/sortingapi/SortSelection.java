@@ -66,6 +66,18 @@ public class SortSelection {
         return true;
     }
 
+    public static String process (String a) {
+        String [] array = a.split(" ");
+        sort(array);
+        assert isSorted(array);
+        show(array);
+
+        StringBuilder sb = new StringBuilder();
+        for (String strItem : array)
+            sb.append(strItem).append(" ");
+        return sb.substring(0, sb.length() - 1);
+    }
+
     public static void main(String[] args) {
         String [] array = readAllStrings();
         sort(array);

@@ -10,9 +10,15 @@ sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
+
+	flatDir {
+		dirs 'libs'
+	}
 }
 
 dependencies {
+	implementation files('libs/stdlib-package.jar')
+	// compile fileTree(dir: 'libs', include: 'stdlib-package.jar')
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
